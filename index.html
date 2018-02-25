@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<head>
+  <title>A Cliche Weather App</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Play:700" rel="stylesheet">
+</head>
+<body>
+  <div class="content">
+    <h2>The Cliche Weather App</h2>
+
+    <div class="weather-icon">
+      <img id="w-icon" src="images/weather-icon.png">
+    </div>
+
+    <p><button onclick="geoFindMe()">Get My Current Weather</button></p>
+    <div id="out"></div>
+
+    <div id="icon">
+    </div>
+
+    <div id="locationName">
+    </div>
+
+    <div id="conditions">
+    </div>
+
+    <div id="temp">
+    </div>
+
+    <p id="convert"></p>
+
+  </div>
+
+  <div id="modLoc">
+    You can change your location here if needed:
+    <br>
+    <br>New Latitude: <input name="newLat" type="text" maxlength="512" id="newLat" class="searchField"/>
+    <br>
+    <br>New Longitude: <input name="newLong" type="text" maxlength="512" id="newLong" class="searchField"/>
+    <p><button id="changeBut" onclick="changeLoc()">Change</button></p>
+  </div>
+</body>
+<script src="scripts.js"></script>

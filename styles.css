@@ -1,0 +1,65 @@
+* {
+  color: white;
+  font-family: 'Play', sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #0a2239;
+}
+
+h2 {
+  letter-spacing: .2em;
+}
+
+button {
+  color: #0a2239;
+  font-size: 14pt;
+  border-radius: 10px;
+}
+
+button:focus {outline:0;}
+
+input {
+  color: black;
+}
+
+.content {
+  width: 50%;
+  padding: 20px;
+  margin: 70px auto 20px auto;
+  border: 2px solid white;
+}
+
+.weather-icon {
+  width: 100px;
+  margin: 0 auto;
+}
+
+#w-icon {
+  width: 100px;
+}
+
+#icon {
+  width: 60px;
+  margin: 10px auto;
+  background-color: #CCC;
+  margin: 1px solid black;
+  border-radius: 30px;
+}
+
+#convertLink {
+  text-decoration: underline;
+  font-size: .6em;
+  cursor: pointer;
+}
+
+#modLoc {
+  visibility: hidden;
+  font-size: .8em;
+}
+
+#changeBut {
+  font-size: .8em;
+  width: 70px;
+}
