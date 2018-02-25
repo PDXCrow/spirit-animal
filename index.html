@@ -1,25 +1,52 @@
 
 <!DOCTYPE html>
 <head>
-  <title>A Cliche Weather App</title>
+  <title>Spirit Animal Finder</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Assistant|Bad+Script" rel="stylesheet">
 </head>
 <body>
+
+<!--  Button to check for locally saved username, and div to put results in`
+  <div>
+    <p><button onclick="fetchUserName()">Get User Name</button></p>
+  </div>
+  <div id="name-here"></div>
+-->
+
   <div class="content">
 
     <img class="main-image" src="images/giraffe.png" alt="Giraffe head">
 
     <h1 class="page-title">Spirit Animal Finder</h1>
 
-    <div class="weather-icon">
-      <img id="w-icon" src="images/weather-icon.png">
+    <div class="questions">
+      Simply answer the questions below and we'll determine <br>
+      the best possible Spirit Animal match for you! <br> <br>
+
+      First, what's your name? <input name="inputName" type="text" maxlength="32" id="inputName" class="searchField"/> <br>
+      --|--<br>
+      Would you rather have a large or small spirit animal? <br>
+      <input type="radio" name="big" value="true" checked="checked"> Large
+      <input type="radio" name="big" value="false"> Small <br>
+      --|--<br>
+      Would you rather have an aggressive or passive spirit animal? <br>
+      <input type="radio" name="aggressive" value="true" checked="checked"> Aggressive
+      <input type="radio" name="aggressive" value="false"> Passive <br>
+      --|--<br>
+      Would you rather have an furry or slimey animal? <br>
+      <input type="radio" name="furry" value="true" checked="checked"> Furry
+      <input type="radio" name="furry" value="false"> Slimey <br>
+      --|--<br>
+
+      <p><button onclick="findAnimal()">Find My Animal</button></p>
     </div>
 
-    <p><button onclick="geoFindMe()">Find My Animal</button></p>
+
+
     <div id="out"></div>
 
-    <div id="icon">
+    <div id="results">
     </div>
 
     <div id="locationName">

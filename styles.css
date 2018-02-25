@@ -1,6 +1,7 @@
 * {
   color: #8d5511;
   font-family: 'Assistant', sans-serif;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -21,8 +22,9 @@ button {
 button:focus {outline:0;}
 
 input {
-  color: black;
+  text-align: left;
 }
+
 
 .main-image {
   width: 75%;
@@ -32,6 +34,7 @@ input {
 .page-title {
   font-family: 'Bad Script', cursive;
   letter-spacing: 3px;
+  font-size: 32pt;
 }
 
 
@@ -42,22 +45,8 @@ input {
   border: 2px solid #8d5511;
 }
 
-.weather-icon {
-  width: 100px;
-  margin: 0 auto;
-}
 
-#w-icon {
-  width: 100px;
-}
 
-#icon {
-  width: 60px;
-  margin: 10px auto;
-  background-color: #CCC;
-  margin: 1px solid black;
-  border-radius: 30px;
-}
 
 #convertLink {
   text-decoration: underline;

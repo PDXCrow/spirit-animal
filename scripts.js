@@ -1,3 +1,22 @@
+var findAnimal = () => {
+  //get user name from input field
+  var userName = document.getElementById("inputName").value;
+  if (userName != '') { //if not blank, show that name has been captured and store locally
+      document.getElementById('results').innerHTML = "Your name is " + userName + ".";
+      localStorage.setItem('savedName', userName)
+    } else { //if blank, alert user
+    alert('Name field cannot be blank.')
+  }
+}
+
+var fetchUserName = () => {
+  //gets saved user name from local storage
+  var savedName = localStorage.getItem("savedName");
+  document.getElementById('name-here').innerHTML = "The saved name is " + savedName + ".";
+}
+
+
+
 
 //object to hold JSON data
 var weather = {};
