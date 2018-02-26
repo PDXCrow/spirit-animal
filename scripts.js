@@ -1,4 +1,8 @@
 var checkForSaved = () => {
+  /*
+  Check for existing saved user name, deliver past results if available
+  and hide name input field
+  */
   if (localStorage.getItem("savedName")) {
     document.getElementById("name-field").style.visibility= 'hidden';
     var savedName = localStorage.getItem("savedName");
@@ -10,10 +14,11 @@ var checkForSaved = () => {
 }
 
 var clearUser = () => {
+  //test function to clear existing user name
   localStorage.removeItem("savedName");
 }
 
-//default user choices all start as true;
+//default user answers, all start as true
 var userChoice = {
   big: 'true',
   aggressive: 'true',
@@ -27,7 +32,7 @@ var bestAnimal = 0;
 var bestScore = 0;
 var currentScoreTotal = 0;
 
-//animal data in array
+//animal data objects in array
 var animalData = [
   {
     name: 'Crow',
@@ -104,15 +109,18 @@ var animalData = [
 ]
 
 var findAnimal = () => {
-  //get user name from input field
-  var userName = document.getElementById("inputName").value;
-  if (userName != '') { //if not blank, show that name has been captured and store locally
+  //grab user answers, score against animal objects in array, produce best match
+  var userName = document.getElementById("inputName").value; //get user name from input field
+  if (userName != '') {
+    //if not blank, thank user and store name locally
       document.getElementById('results').innerHTML = "Thanks for answering the questions, "
       + userName + ".";
       localStorage.setItem('savedName', userName)
-    } else if (localStorage.getItem("savedName") == null) { //if blank and no saved user, alert user
+    } else if (localStorage.getItem("savedName") == null) {
+      //if blank and no saved user, alert user
     alert('Name field cannot be blank. Please enter your name before submitting.')
   }
+  //any user choices that are false are changed in default answers
   var bigResult = document.getElementsByName('big');
   if (bigResult[1].checked) {
     userChoice.big = 'false';
@@ -137,8 +145,9 @@ var findAnimal = () => {
   if (carnivoreResult[1].checked) {
     userChoice.carnivore = 'false';
   }
-  //test answers vs. animals
+  //test user answers vs. animal data and score
   for (var i = 0; i < animalData.length; i++) {
+    //add 1 to score of current animal for every trait that matches
     if (animalData[i].big === userChoice.big) {
       currentScoreTotal += 1;
     }
@@ -158,21 +167,24 @@ var findAnimal = () => {
       currentScoreTotal += 1;
     }
     if (currentScoreTotal > bestScore) {
+      //if this animal's total score is better than previous best match, capture this as best animal
       bestScore = currentScoreTotal;
       bestAnimal = i;
     }
-    currentScoreTotal = 0;
+    currentScoreTotal = 0; //reset score for next animal to be tested
   }
+  //deliver winning animal data
   var match = Math.round(bestScore / 6 * 100);
   document.getElementById('results').innerHTML += "<br>We've determined that your best Spirit Animal is the "
   + animalData[bestAnimal].name + ". Your match was: " + match + "%";
 
+  //store best animal match locally
   localStorage.setItem('savedAnimal', animalData[bestAnimal].name);
 }
 
 
 var fetchUserName = () => {
-  //gets saved user name from local storage
+  //test function that gets saved user name from local storage
   var savedName = localStorage.getItem("savedName");
   var savedAnimal = localStorage.getItem("savedAnimal");
   document.getElementById('name-here').innerHTML = "The saved name is "
