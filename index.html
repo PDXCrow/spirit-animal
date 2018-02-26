@@ -5,7 +5,7 @@
     <link href="styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Assistant|Bad+Script" rel="stylesheet">
 </head>
-<body>
+<body onload="checkForSaved()">
 
 
   <div>
@@ -21,8 +21,8 @@
     <h1 class="page-title">Spirit Animal Finder</h1>
 
     <div class="questions">
-      Simply answer the questions below and we'll determine <br>
-      the best possible Spirit Animal match for you! <br> <br>
+      <p id="intro-text"> Simply answer the questions below and we'll determine <br>
+      the best possible Spirit Animal match for you! </p>
 
       First, what's your name? <input name="inputName" type="text" maxlength="32" id="inputName" class="searchField"/> <br>
       --|--<br>
@@ -43,33 +43,10 @@
     </div>
 
 
-
-    <div id="out"></div>
-
     <div id="results">
     </div>
 
-    <div id="locationName">
-    </div>
 
-    <div id="conditions">
-    </div>
-
-    <div id="temp">
-    </div>
-
-    <p id="convert"></p>
-
-  </div>
-
-  <div id="modLoc">
-    You can change your location here if needed:
-    <br>
-    <br>New Latitude: <input name="newLat" type="text" maxlength="512" id="newLat" class="searchField"/>
-    <br>
-    <br>New Longitude: <input name="newLong" type="text" maxlength="512" id="newLong" class="searchField"/>
-    <p><button id="changeBut" onclick="changeLoc()">Change</button></p>
-  </div>
 </body>
 <script src="scripts.js"></script>
 

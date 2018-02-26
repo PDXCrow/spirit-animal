@@ -1,3 +1,12 @@
+var checkForSaved = () => {
+  if (localStorage.getItem("savedName")) {
+    var savedName = localStorage.getItem("savedName");
+    var savedAnimal = localStorage.getItem("savedAnimal");
+    document.getElementById('intro-text').innerHTML = "Welcome back "
+    + savedName + "! You previously took the Spirit Animal test and were matched with "
+    + savedAnimal + ". Would you like to take the test again?";
+  }
+}
 //default user choices all start as true;
 var userChoice = {
   big: 'true',
