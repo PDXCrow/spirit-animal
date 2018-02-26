@@ -46,7 +46,9 @@ input {
 }
 
 
-
+#name-field {
+  visibility: visible;
+}
 
 #convertLink {
   text-decoration: underline;
