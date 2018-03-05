@@ -44,7 +44,7 @@ var animalData = [
     carnivore: 'true'
   },
   {
-    name: 'Slug',
+    name: 'Snail',
     big: 'false',
     aggressive: 'false',
     flying: 'false',
@@ -71,16 +71,16 @@ var animalData = [
     carnivore: 'false'
   },
   {
-    name: 'T-Rex',
+    name: 'Lion',
     big: 'true',
     aggressive: 'true',
     flying: 'false',
-    herd: 'false',
+    herd: 'true',
     smart: 'false',
     carnivore: 'true'
   },
   {
-    name: 'Robin',
+    name: 'Finch',
     big: 'false',
     aggressive: 'false',
     flying: 'true',
@@ -89,7 +89,7 @@ var animalData = [
     carnivore: 'false'
   },
   {
-    name: 'Salmon',
+    name: 'Fish',
     big: 'false',
     aggressive: 'false',
     flying: 'false',
@@ -98,7 +98,7 @@ var animalData = [
     carnivore: 'false'
   },
   {
-    name: 'Mosquito',
+    name: 'Dragonfly',
     big: 'false',
     aggressive: 'true',
     flying: 'true',
@@ -178,15 +178,26 @@ var findAnimal = () => {
   document.getElementById('results').innerHTML += "<br>We've determined that your best Spirit Animal is the "
   + animalData[bestAnimal].name + ". Your match was: " + match + "%";
 
+
   //store best animal match locally
   localStorage.setItem('savedAnimal', animalData[bestAnimal].name);
+
+  displayAnswer();
+
+  document.getElementById("findButton").style.visibility= 'hidden';
+
 }
 
-
+/*
 var fetchUserName = () => {
   //test function that gets saved user name from local storage
   var savedName = localStorage.getItem("savedName");
   var savedAnimal = localStorage.getItem("savedAnimal");
   document.getElementById('name-here').innerHTML = "The saved name is "
   + savedName + ". Your previous spirit animal was " + savedAnimal + ".";
+}
+*/
+
+var displayAnswer = () => {
+  document.getElementById('main-content').innerHTML = '<img class="answer-image" src="images/' + animalData[bestAnimal].name + '.png">';
 }
