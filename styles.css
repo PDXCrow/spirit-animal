@@ -3,10 +3,13 @@
   font-family: 'Assistant', sans-serif;
   font-size: 20px;
   text-align: center;
+  margin: 0px;
 }
 
 body {
   background-color: #fee9be;
+  padding: 5px;
+  margin: 5px;
 }
 
 h2 {
@@ -17,6 +20,7 @@ button {
   color: #0a2239;
   font-size: 14pt;
   border-radius: 10px;
+  padding: 5px;
 }
 
 button:focus {
@@ -39,7 +43,7 @@ input {
 
 .content {
   width: 50%;
-  padding: 20px;
+  padding: 10px;
   margin: 70px auto 20px auto;
   border: 2px solid #8d5511;
 }
@@ -52,6 +56,48 @@ input {
   width: 50%;
   border-radius: 50%;
 }
+
+.header {
+  width: 100%;
+  background-color: black;
+}
+
+#main-content {
+  padding: 0px;
+  margin-bottom: 25px;
+}
+
+#menu-items {
+text-align: center;
+
+}
+
+#menu-items ul{
+  list-style: none;
+  margin: 0 2px;
+  padding: 0;
+}
+
+#menu-items li {
+   color: white;
+   display: inline-block;
+   padding: 5px 100px;
+}
+
+#menu-items a {
+  font-weight: normal;
+  font-size: 1em;
+  color: white;
+}
+
+#menu-items a:link {
+  text-decoration: none;
+}
+
+#menu-items a:hover {
+  color: #fee9be;
+}
+
 
 #name-field {
   visibility: visible;

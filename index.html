@@ -7,12 +7,13 @@
 </head>
 <body onload="checkForSaved()">
 
-
-  <div>
-    <p><button onclick="clearUser()">Clear User Name</button></p>
+  <div class="header">
+    <ul id="menu-items">
+      <li><a href='#'>The Animals</a></li>
+      <li><a href='#'>About</a></li>
+      <li><a href='#'>Contact</a></li>
+    </ul>
   </div>
-
-
 
   <div class="content">
 
@@ -22,7 +23,7 @@
 
     <div id="main-content" class="questions">
       <p id="intro-text"> Simply answer the questions below and we'll determine <br>
-      the best possible Spirit Animal match for you! </p>
+      the best possible Spirit Animal match for you! </p><br>
 
       <div id="name-field">First, what's your name? <input name="inputName" type="text" maxlength="32" id="inputName" class="searchField"/> <br>
       --|--<br></div>
@@ -35,7 +36,7 @@
       <input type="radio" name="aggressive" value="false"> Sneak <br>
       --|--<br>
       A cliff face is up ahead, do you dash to the edge to see the view, or remain at a safe distance? <br>
-      <input type="radio" name="flying" value="true" checked="checked"> Edge
+      <input type="radio" name="flying" value="true" checked="checked"> Dash
       <input type="radio" name="flying" value="false"> Safe <br>
       --|--<br>
       At a party, are you the center of attention, or analyzing the room for the corner? <br>
@@ -58,6 +59,15 @@
     <div>
       <p><button id="findButton" onclick="findAnimal()">Find Animal</button></p>
     </div>
-    <p class="footer">Copyright &copy; 2018 Hans Janowitz</p>
+
+
+<br>
+<br>
+<br>
+<br>
+      <div>
+        <p><button onclick="clearUser()">Clear User Name</button></p>
+      </div>
+  <p class="footer">Copyright &copy; 2018 Hans Janowitz</p>
 </body>
 <script src="scripts.js"></script>
