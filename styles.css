@@ -48,6 +48,11 @@ input {
   font-size: 10px;
 }
 
+.answer-image {
+  width: 50%;
+  border-radius: 50%;
+}
+
 #name-field {
   visibility: visible;
 }

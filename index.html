@@ -9,11 +9,6 @@
 
 
   <div>
-    <p><button onclick="fetchUserName()">Get User Name</button></p>
-  </div>
-  <div id="name-here"></div>
-
-  <div>
     <p><button onclick="clearUser()">Clear User Name</button></p>
   </div>
 
@@ -21,11 +16,11 @@
 
   <div class="content">
 
-    <img class="main-image" src="images/giraffe.png" alt="Giraffe head">
+    <img class="main-image" src="images/home-image.png" alt="Giraffe head">
 
     <h1 class="page-title">Spirit Animal Finder</h1>
 
-    <div class="questions">
+    <div id="main-content" class="questions">
       <p id="intro-text"> Simply answer the questions below and we'll determine <br>
       the best possible Spirit Animal match for you! </p>
 
@@ -55,14 +50,14 @@
       <input type="radio" name="carnivore" value="true" checked="checked"> Big Mac
       <input type="radio" name="carnivore" value="false"> Big Salad <br>
       --|--<br>
-
-      <p><button onclick="findAnimal()">Find My Animal</button></p>
     </div>
 
 
     <div id="results">
     </div>
-
+    <div>
+      <p><button id="findButton" onclick="findAnimal()">Find Animal</button></p>
+    </div>
     <p class="footer">Copyright &copy; 2018 Hans Janowitz</p>
 </body>
 <script src="scripts.js"></script>
