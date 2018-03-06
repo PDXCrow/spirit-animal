@@ -1,7 +1,7 @@
 var checkForSaved = () => {
   /*
-  Check for existing saved user name, deliver past results if available
-  and hide name input field
+  Check for existing saved user name, deliver past results if available,
+  hide name input field, show new user link.
   */
   if (localStorage.getItem("savedName")) {
     document.getElementById("name-field").style.visibility= 'hidden';
@@ -15,7 +15,7 @@ var checkForSaved = () => {
 }
 
 var clearUser = () => {
-  //test function to clear existing user name
+  //clear existing user name, reload page so new user can take test
   localStorage.removeItem("savedName");
   location.reload();
 }
@@ -114,15 +114,15 @@ var animalData = [
     herd: 'true',
     smart: 'false',
     carnivore: 'true',
-    detail: 'The dragonfly is a tiny, quick, flying creature that lives alone, is not too intelligence and eats other small creatures.'
+    detail: 'The dragonfly is a tiny, quick, flying creature that lives alone, is not too intelligent and eats other small creatures.'
   }
 ]
 
 var findAnimal = () => {
-  //grab user answers, score against animal objects in array, produce best match
+  //grab user name and answers, score against animal objects in array, produce best match
   var userName = document.getElementById("inputName").value; //get user name from input field
   if (userName == '') {
-    //if blank, alert user
+    //if name field is blank, alert user
     alert('Name field cannot be blank. Please enter your name before submitting.');
   } else {
     //if not blank, thank user and store name locally
@@ -183,15 +183,19 @@ var findAnimal = () => {
         }
         currentScoreTotal = 0; //reset current score for next animal to be tested
       }
-      //deliver winning animal data
+      //deliver winning animal data and how well it matched
       var match = Math.round(bestScore / 6 * 100);
-      document.getElementById('results').innerHTML += "<br>We've determined that your best Spirit Animal is the "
+      document.getElementById('results').innerHTML +=
+      "<br>We've determined that your best Spirit Animal is the "
       + animalData[bestAnimal].name + ". Your match was: " + match + "%";
+
+      //show best animal photo
+      document.getElementById('main-content').innerHTML =
+      '<img class="answer-image" src="images/' + animalData[bestAnimal].name +
+      '.png">';
 
       //store best animal match locally
       localStorage.setItem('savedAnimal', animalData[bestAnimal].name);
-
-      displayAnswer();
 
       //hide findAnimal button
       document.getElementById("findButton").style.visibility = 'hidden';
@@ -199,14 +203,12 @@ var findAnimal = () => {
     } //end of else
 } //end of findAnimal
 
-var displayAnswer = () => {
-  //get best animal photo and display in HTML
-  document.getElementById('main-content').innerHTML = '<img class="answer-image" src="images/' + animalData[bestAnimal].name + '.png">';
-}
-
 var createAnimals = () => {
   for (var i = 0; i < animalData.length; i++) {
-    document.getElementById('animalList').innerHTML += '<p class="animalDetails"><img class="list-image" src="images/' + animalData[i].name + '.png">' + '<br>' + animalData[i].name + '<br>' + animalData[i].detail + '</p>';
+    document.getElementById('animalList').innerHTML +=
+    '<p class="animalDetails"><img class="list-image" src="images/' +
+    animalData[i].name + '.png">' + '<br>' + animalData[i].name + '<br>' +
+    animalData[i].detail + '</p>';
   }
 
 }

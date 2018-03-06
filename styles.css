@@ -136,3 +136,8 @@ text-align: center;
 #newUser a {
   font-size: 14px;
 }
+
+#author-photo {
+  width: 40%;
+  border-radius: 20%;
+}
