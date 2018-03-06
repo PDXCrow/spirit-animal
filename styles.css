@@ -55,6 +55,7 @@ input {
   border-radius: 50%;
 }
 
+<<<<<<< HEAD
 .header {
   width: 100%;
   background-color: black;
@@ -99,6 +100,8 @@ text-align: center;
 }
 
 
+=======
+>>>>>>> 3c3a8a7fe69db3ed72d9e6cc2cdd193b46ddf092
 #name-field {
   visibility: visible;
 }
