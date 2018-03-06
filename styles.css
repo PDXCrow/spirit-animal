@@ -33,6 +33,8 @@ input {
   width: 75%;
 }
 
+
+
 .page-title {
   font-family: 'Bad Script', cursive;
   letter-spacing: 3px;
@@ -55,6 +57,15 @@ input {
   border-radius: 50%;
 }
 
+.list-image {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.animalDetails {
+  margin: 10px 0px;
+  padding: 40px;
+}
 
 .header {
   width: 100%;
@@ -70,7 +81,6 @@ input {
 
 #menu-items {
 text-align: center;
-
 }
 
 #menu-items ul{
@@ -99,9 +109,6 @@ text-align: center;
   color: #8d5511;
 }
 
-
-=======
->>>>>>> 3c3a8a7fe69db3ed72d9e6cc2cdd193b46ddf092
 #name-field {
   visibility: visible;
 }
@@ -120,4 +127,12 @@ text-align: center;
 #changeBut {
   font-size: .8em;
   width: 70px;
+}
+
+#newUser {
+  font-size: 14px;
+}
+
+#newUser a {
+  font-size: 14px;
 }

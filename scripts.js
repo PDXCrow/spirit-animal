@@ -7,15 +7,17 @@ var checkForSaved = () => {
     document.getElementById("name-field").style.visibility= 'hidden';
     var savedName = localStorage.getItem("savedName");
     var savedAnimal = localStorage.getItem("savedAnimal");
-    document.getElementById('intro-text').innerHTML = "Welcome back "
-    + savedName + "! You previously took the Spirit Animal test and were matched with "
-    + savedAnimal + ". How about taking the test again?";
+    document.getElementById('intro-text').innerHTML = 'Welcome back '
+    + savedName + '! You previously took the Spirit Animal test and were matched with '
+    + savedAnimal + '. How about taking the test again? <br> <p id="newUser">If you want to start over as a new user, click <a href="javascript:clearUser()">here</a>.</p>';
+    document.getElementById("inputName").value = savedName;
   }
 }
 
 var clearUser = () => {
   //test function to clear existing user name
   localStorage.removeItem("savedName");
+  location.reload();
 }
 
 //default user answers, all start as true
@@ -41,7 +43,8 @@ var animalData = [
     flying: 'true',
     herd: 'true',
     smart: 'true',
-    carnivore: 'true'
+    carnivore: 'true',
+    detail: 'The crow is a small, aggressive, flying animal that likes groups, is very intelligent and eats just about anything.'
   },
   {
     name: 'Snail',
@@ -50,7 +53,8 @@ var animalData = [
     flying: 'false',
     herd: 'false',
     smart: 'false',
-    carnivore: 'false'
+    carnivore: 'false',
+    detail: 'The snail is a small, passive, grounded animal that lives solo, has very basic intelligence and eats organic material.'
   },
   {
     name: 'Eagle',
@@ -59,7 +63,8 @@ var animalData = [
     flying: 'true',
     herd: 'false',
     smart: 'true',
-    carnivore: 'true'
+    carnivore: 'true',
+    detail: 'The eagle is a large, very aggressive flying animal that likes to be alone, is very intelligence and loves meat.'
   },
   {
     name: 'Giraffe',
@@ -68,7 +73,8 @@ var animalData = [
     flying: 'false',
     herd: 'true',
     smart: 'false',
-    carnivore: 'false'
+    carnivore: 'false',
+    detail: 'The giraffe is a tall, quiet, simple animal that lives in groups, is mildly intelligent and eats plants.'
   },
   {
     name: 'Lion',
@@ -77,16 +83,18 @@ var animalData = [
     flying: 'false',
     herd: 'true',
     smart: 'false',
-    carnivore: 'true'
+    carnivore: 'true',
+    detail: 'The lion is a large, dangerous, fearless animal that lives in prides, is quite intelligent and loves to eat animals.'
   },
   {
     name: 'Finch',
     big: 'false',
     aggressive: 'false',
     flying: 'true',
-    herd: 'false',
+    herd: 'true',
     smart: 'false',
-    carnivore: 'false'
+    carnivore: 'false',
+    detail: 'The finch is a small, peaceful, very fast flyier that likes to be around others, has very basic intelligence and eats seeds and berries.'
   },
   {
     name: 'Fish',
@@ -95,7 +103,8 @@ var animalData = [
     flying: 'false',
     herd: 'true',
     smart: 'false',
-    carnivore: 'false'
+    carnivore: 'true',
+    detail: 'The fish is a small, quiet, animal that lives in schools, has very basic intelligence and eats just about anything.'
   },
   {
     name: 'Dragonfly',
@@ -104,7 +113,8 @@ var animalData = [
     flying: 'true',
     herd: 'true',
     smart: 'false',
-    carnivore: 'true'
+    carnivore: 'true',
+    detail: 'The dragonfly is a tiny, quick, flying creature that lives alone, is not too intelligence and eats other small creatures.'
   }
 ]
 
@@ -171,23 +181,32 @@ var findAnimal = () => {
           bestScore = currentScoreTotal;
           bestAnimal = i;
         }
-        currentScoreTotal = 0; //reset score for next animal to be tested
+        currentScoreTotal = 0; //reset current score for next animal to be tested
       }
       //deliver winning animal data
       var match = Math.round(bestScore / 6 * 100);
       document.getElementById('results').innerHTML += "<br>We've determined that your best Spirit Animal is the "
       + animalData[bestAnimal].name + ". Your match was: " + match + "%";
 
-
       //store best animal match locally
       localStorage.setItem('savedAnimal', animalData[bestAnimal].name);
 
       displayAnswer();
 
-      document.getElementById("findButton").style.visibility= 'hidden';
+      //hide findAnimal button
+      document.getElementById("findButton").style.visibility = 'hidden';
+
     } //end of else
 } //end of findAnimal
 
 var displayAnswer = () => {
+  //get best animal photo and display in HTML
   document.getElementById('main-content').innerHTML = '<img class="answer-image" src="images/' + animalData[bestAnimal].name + '.png">';
+}
+
+var createAnimals = () => {
+  for (var i = 0; i < animalData.length; i++) {
+    document.getElementById('animalList').innerHTML += '<p class="animalDetails"><img class="list-image" src="images/' + animalData[i].name + '.png">' + '<br>' + animalData[i].name + '<br>' + animalData[i].detail + '</p>';
+  }
+
 }
