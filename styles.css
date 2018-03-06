@@ -8,8 +8,6 @@
 
 body {
   background-color: #fee9be;
-  padding: 5px;
-  margin: 5px;
 }
 
 h2 {
@@ -18,9 +16,9 @@ h2 {
 
 button {
   color: #0a2239;
-  font-size: 14pt;
-  border-radius: 10px;
-  padding: 5px;
+  font-size: 12pt;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 button:focus {
@@ -63,8 +61,10 @@ input {
 }
 
 #main-content {
-  padding: 0px;
+  padding: 10px;
+  margin: 10px;
   margin-bottom: 25px;
+  line-height: 1.6;
 }
 
 #menu-items {
@@ -95,7 +95,7 @@ text-align: center;
 }
 
 #menu-items a:hover {
-  color: #fee9be;
+  color: #8d5511;
 }
 
 
