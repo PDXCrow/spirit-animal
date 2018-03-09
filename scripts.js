@@ -1,7 +1,7 @@
 var checkForSaved = () => {
   /*
-  Check for existing saved user name, deliver past results if available,
-  hide name input field, show new user link.
+  Check for existing saved user name, if present hide name input field,
+  get and deliver past results, show link to reset user.
   */
   if (localStorage.getItem("savedName")) {
     document.getElementById("name-field").style.visibility= 'hidden';
@@ -10,7 +10,7 @@ var checkForSaved = () => {
     document.getElementById('intro-text').innerHTML = 'Welcome back '
     + savedName + '! You previously took the Spirit Animal test and were matched with '
     + savedAnimal + '. How about taking the test again? <br> <p id="newUser">If you want to start over as a new user, click <a href="javascript:clearUser()">here</a>.</p>';
-    document.getElementById("inputName").value = savedName;
+    document.getElementById("inputName").value = savedName; //inserts saved user name to hidden name field so no error on submit
   }
 }
 
